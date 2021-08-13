@@ -36,8 +36,8 @@ public class Name {
     public void endTakingNames(){
         System.out.println("koniec pobierania imion, drukuje liste:");
         printList();
-        Selector select = new Selector();
-        select.selectName();
+//        Selector select = new Selector();
+//        select.selectName();
     }
 
     public String getName() {
