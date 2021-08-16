@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Name {
     private String name = "";
+    private int nameCount = 0;
     static ArrayList<String> names = new ArrayList<>();
     Scanner read = new Scanner(System.in);
 
@@ -14,14 +15,17 @@ public class Name {
     }
 
     public void takeFirstName(){
+        System.out.println("Podaj pierwsze imię: ");
         setName();
+        setNameCount();
         addNameToList();
-        System.out.println(" rozmiar listy: " + names.size());
+        printListSize();
     }
     public void takeName(String name){
         setName(name);
+        setNameCount();
         addNameToList();
-        System.out.println(" rozmiar listy: " + names.size());
+        printListSize();
     }
     public void anotherName(){
         System.out.println("wpisz kolejne imie, 0 aby zakonczyc dodawanie imion");
@@ -39,7 +43,24 @@ public class Name {
 //        Selector select = new Selector();
 //        select.selectName();
     }
+    public void printList(){
+        int lp = 0;
+        for (String s : names) {
+            lp++;
+//            System.out.print(lp + " ");
+            System.out.print(s + " ");
+        }
+    }
+    public void printListSize(){
+        System.out.println(" rozmiar listy: " + names.size());
+    }
 
+    public int getNameCount() {
+        return nameCount;
+    }
+    public void setNameCount() {
+        this.nameCount = nameCount++;
+    }
     public String getName() {
         return name;
     }
@@ -52,11 +73,6 @@ public class Name {
     public void addNameToList(){
         names.add(getName());
     }
-    public void printList(){
-        for (String s : names) {
-            System.out.println(s);
-        }
-    }
 
     public ArrayList<String> getNames() {
         return names;
@@ -64,7 +80,7 @@ public class Name {
 
     @Override
     public String toString() {
-        return "name= " + getName();
+        return "name= " + getName() + " count: " + getNameCount();
     }
 
 

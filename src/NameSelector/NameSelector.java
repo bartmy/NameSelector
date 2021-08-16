@@ -1,20 +1,20 @@
 package NameSelector;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class NameSelector {
 
 
     public void programStart(){
         System.out.println("Witam w programie losujacym imię. \n" +
                 "Jesli zastanawiasz się nad kilkoma imionami dla dziecka ten program pomoże Ci wybrać zdając się na ślepy los.\n" +
-                "Dziekujemy za skorzystanie i gratualcje :)");
-        System.out.println("Podaj pierwsze imię: ");
+                "Dziekujemy za skorzystanie i gratualcje :) \n");
         Name name = new Name();
-        name.takeNames();
-//        Selector select = new Selector();
-//        select.selectName();
+        Selector selector = new Selector();
+
+//        name.takeNames(); // uzytkownik tworzy liste imion
+        selector.predefinedList(); // lista naszych imion zeby bylo szybciej
+
+//        selector.randomOneName(); // losujemy jedno imie z podanej listy
+//        selector.multipleRandomNames(); // losujemy imie z listy na x ilosci prob
     }
 
     // program prosi o podanie imion
