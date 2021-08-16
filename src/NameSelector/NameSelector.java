@@ -2,7 +2,6 @@ package NameSelector;
 
 public class NameSelector {
 
-
     public void programStart(){
         System.out.println("Witam w programie losujacym imię. \n" +
                 "Jesli zastanawiasz się nad kilkoma imionami dla dziecka ten program pomoże Ci wybrać zdając się na ślepy los.\n" +
@@ -14,7 +13,8 @@ public class NameSelector {
         selector.predefinedList(); // lista naszych imion zeby bylo szybciej
 
 //        selector.randomOneName(); // losujemy jedno imie z podanej listy
-//        selector.multipleRandomNames(); // losujemy imie z listy na x ilosci prob
+        selector.randomNamesList(); // losujemy imie z listy na x ilosci prob
+        selector.countNamesInList();
     }
 
     // program prosi o podanie imion

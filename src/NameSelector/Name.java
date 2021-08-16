@@ -1,6 +1,8 @@
 package NameSelector;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Name {
@@ -8,6 +10,14 @@ public class Name {
     private int nameCount = 0;
     static ArrayList<String> names = new ArrayList<>();
     Scanner read = new Scanner(System.in);
+    Random random = new Random();
+
+
+    public String randomName(){
+        int index = random.nextInt(names.size());
+        setNameCount();
+        return names.get(index);
+    }
 
     public void takeNames(){
         takeFirstName();
@@ -48,8 +58,18 @@ public class Name {
         for (String s : names) {
             lp++;
 //            System.out.print(lp + " ");
-            System.out.print(s + " ");
+            System.out.print(s + ", ");
         }
+        System.out.println("");
+    }
+    public void printList(ArrayList<String> list){
+        int lp = 0;
+        for (String s : list) {
+            lp++;
+//            System.out.print(lp + " ");
+            System.out.print(s + ", ");
+        }
+        System.out.println("");
     }
     public void printListSize(){
         System.out.println(" rozmiar listy: " + names.size());
