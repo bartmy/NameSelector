@@ -5,12 +5,16 @@ import java.util.Scanner;
 public class NameSelector {
     Name name = new Name();
     Selector selector = new Selector();
+    static boolean programEnd;
 
     public void programStart(){
-        System.out.println("Witam w programie losujacym imię. \n" +
-                "Jesli zastanawiasz się nad kilkoma imionami dla dziecka ten program pomoże Ci wybrać zdając się na ślepy los.\n" +
-                "Dziekujemy za skorzystanie i gratualcje :) \n");
-        programMenu();
+        while (!programEnd){
+            System.out.println("Witam w programie losujacym imię. \n" +
+                    "Jesli zastanawiasz się nad kilkoma imionami dla dziecka ten program pomoże Ci wybrać zdając się na ślepy los.\n" +
+                    "Dziekujemy za skorzystanie i gratualcje :) \n");
+            programMenu();
+        }
+
     }
 
     public void programMenu(){
@@ -27,22 +31,26 @@ public class NameSelector {
         switch (switchChoice()){
             case 1:
                 chooseOne();
+                isThatAll();
                 break;
             case 2:
                 chooseMultiple();
+                isThatAll();
                 break;
             case 3:
                 predefinedOne();
+                isThatAll();
                 break;
             case 4:
                 predefinedMultiple();
+                isThatAll();
                 break;
             case 5:
-                System.out.println("dziekujemy za skorzystanie z programu");
+                thankYouEndProgram();
                 // koniec
                 break;
             default:
-                System.out.println("nie rozpoznałem");
+                didNotRecognize();
                 programMenu();
                 break;
         }
@@ -54,9 +62,10 @@ public class NameSelector {
                 programMenu();
                 break;
             case 2:
+                thankYouEndProgram();
                 break;
             default:
-                System.out.println("nie rozpoznałem");
+                didNotRecognize();
                 isThatAll();
                 break;
         }
@@ -68,8 +77,7 @@ public class NameSelector {
     }
     public void chooseMultiple(){
         name.takeNames(); // uzytkownik tworzy liste imion
-        selector.randomNamesList(); // losujemy imie z listy na x ilosci prob
-        selector.countNamesInList(); // liczymy ile razy ktore imie sie pokazuje
+        selector.randomMultipleNames(); // losujemy imie z listy na x ilosci prob
     }
     public void predefinedOne(){
         selector.predefinedList(); // lista naszych imion zeby bylo szybciej
@@ -77,12 +85,18 @@ public class NameSelector {
     }
     public void predefinedMultiple(){
         selector.predefinedList(); // lista naszych imion zeby bylo szybciej
-        selector.randomNamesList(); // losujemy imie z listy na x ilosci prob
-        selector.countNamesInList(); // liczymy ile razy ktore imie sie pokazuje
+        selector.randomMultipleNames(); // losujemy imie z listy na x ilosci prob
     }
     public Integer switchChoice(){
         Scanner read = new Scanner(System.in);
         return read.nextInt();
+    }
+    public void didNotRecognize(){
+        System.out.println("nie rozpoznałem");
+    }
+    public void thankYouEndProgram(){
+        System.out.println("dziekujemy za skorzystanie z programu");
+        programEnd = false;
     }
 
 

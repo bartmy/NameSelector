@@ -27,7 +27,7 @@ public class Selector {
         System.out.println("Wybrane imię to: " + randomOneName);
         return randomOneName;
     }
-    public void randomNamesList(){
+    public void randomMultipleNames(){
         System.out.println("wybieramy losotw imie z listy na podstawie zalozonej liczby prób.");
         System.out.println("Podaj ile razy namy probowac: ");
         int x = read.nextInt();
@@ -41,6 +41,7 @@ public class Selector {
         }
         System.out.println("wielkosc listy to " + list.size());
         name.printList(list);
+        countNamesInList();
     }
     public void countNamesInList(){
         for (int i = 0; i<Name.names.size(); i++){
