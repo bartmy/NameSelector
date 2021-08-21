@@ -16,7 +16,7 @@ public class NameSelector {
     public void programMenu(){
         System.out.println("Podaj co chcesz zrobić");
         System.out.println("1. Podaj imiona i wylosuj jedno\n" +
-                "2. Podaj imiona oraz ilość losowań, zobaczysz które imię pokazuje się najczęściej" +
+                "2. Podaj imiona oraz ilość losowań, zobaczysz które imię pokazuje się najczęściej\n" +
                 "3. Wylosuje jedno imie z naszej listy \n" +
                 "4. Skorzystaj z naszej listy na wiele losowań \n" +
                 "5. Koniec");
@@ -24,9 +24,7 @@ public class NameSelector {
     }
 
     public void menuOptions(){
-        Scanner read = new Scanner(System.in);
-        int choice = read.nextInt();
-        switch (choice){
+        switch (switchChoice()){
             case 1:
                 chooseOne();
                 break;
@@ -40,6 +38,7 @@ public class NameSelector {
                 predefinedMultiple();
                 break;
             case 5:
+                System.out.println("dziekujemy za skorzystanie z programu");
                 // koniec
                 break;
             default:
@@ -47,6 +46,21 @@ public class NameSelector {
                 programMenu();
                 break;
         }
+    }
+    public void isThatAll(){
+        System.out.println("czy to wszystko ? 1- menu, 2-end");
+        switch (switchChoice()){
+            case 1:
+                programMenu();
+                break;
+            case 2:
+                break;
+            default:
+                System.out.println("nie rozpoznałem");
+                isThatAll();
+                break;
+        }
+
     }
     public void chooseOne(){
         name.takeNames(); // uzytkownik tworzy liste imion
@@ -66,7 +80,10 @@ public class NameSelector {
         selector.randomNamesList(); // losujemy imie z listy na x ilosci prob
         selector.countNamesInList(); // liczymy ile razy ktore imie sie pokazuje
     }
-
+    public Integer switchChoice(){
+        Scanner read = new Scanner(System.in);
+        return read.nextInt();
+    }
 
 
 
