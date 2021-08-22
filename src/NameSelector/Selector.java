@@ -16,6 +16,7 @@ public class Selector {
         Name.names.add("Kuba");
         name.printList();
     }
+
     public String randomOneName(){
         System.out.println("wybieramy losowe imie z " + Name.names.size() + " podanych przez Ciebie imion.");
         int index = random.nextInt(Name.names.size());
@@ -24,6 +25,7 @@ public class Selector {
         System.out.println("Wybrane imię to: " + randomOneName);
         return randomOneName;
     }
+
     public void randomMultipleNames(){
         System.out.println("wybieramy losotw imie z listy na podstawie zalozonej liczby prób.");
         System.out.println("Podaj ile razy namy probowac: ");
@@ -39,6 +41,7 @@ public class Selector {
         System.out.println("dokonano " + list.size() + " losowań");
         countNamesInList();
     }
+
     public void countNamesInList(){
         HashMap<String, Integer> map = new HashMap<>();
         for (int i = 0; i<Name.names.size(); i++){
@@ -60,5 +63,6 @@ public class Selector {
             System.out.println(((Map.Entry<String, Integer>) e).getKey() + " : "
                     + ((Map.Entry<String, Integer>) e).getValue());
         }
+        //end of pasted algorithm
     }
 }

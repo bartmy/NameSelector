@@ -31,19 +31,14 @@ public class NameSelector {
         switch (switchChoice()){
             case 1:
                 chooseOne();
-                isThatAll();
                 break;
             case 2:
                 chooseMultiple();
-                isThatAll();
-                break;
             case 3:
                 predefinedOne();
-                isThatAll();
                 break;
             case 4:
                 predefinedMultiple();
-                isThatAll();
                 break;
             case 5:
                 thankYouEndProgram();
@@ -54,7 +49,9 @@ public class NameSelector {
                 programMenu();
                 break;
         }
+        isThatAll();
     }
+
     public void isThatAll(){
         System.out.println("czy to wszystko ? 1- menu, 3-end"); // add 2- rerun
         switch (switchChoice()){
@@ -69,8 +66,8 @@ public class NameSelector {
                 isThatAll();
                 break;
         }
-
     }
+
     public void chooseOne(){
         name.takeNames(); // uzytkownik tworzy liste imion
         selector.randomOneName(); // losujemy jedno imie z podanej listy
@@ -98,11 +95,4 @@ public class NameSelector {
         System.out.println("dziekujemy za skorzystanie z programu");
         programEnd = true;
     }
-
-
-
-    /*program losuje imie z podanej listy
-    * mozna podac ilosc proby*/
-
-    // program wyswietla wyniki, procentowo, i w ilosciach
 }
