@@ -96,7 +96,7 @@ public class NameSelector {
     }
     public void thankYouEndProgram(){
         System.out.println("dziekujemy za skorzystanie z programu");
-        programEnd = false;
+        programEnd = true;
     }
 
 
