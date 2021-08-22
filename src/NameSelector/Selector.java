@@ -30,13 +30,9 @@ public class Selector {
         System.out.println("wybieramy losotw imie z listy na podstawie zalozonej liczby prób.");
         System.out.println("Podaj ile razy namy probowac: ");
         int x = read.nextInt();
-        int lp = 0;
-//        String tempName = randomName();
         for (int i = 0; i < x; i++){
             String tempName = name.randomName();
             list.add(tempName);
-            lp++;
-//            System.out.println(lp + " " + tempName + " " + name.getNameCount());
         }
         System.out.println("dokonano " + list.size() + " losowań");
         countNamesInList();

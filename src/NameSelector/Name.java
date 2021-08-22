@@ -1,7 +1,6 @@
 package NameSelector;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -50,26 +49,18 @@ public class Name {
     public void endTakingNames(){
         System.out.println("koniec pobierania imion, drukuje liste:");
         printList();
-//        Selector select = new Selector();
-//        select.selectName();
     }
     public void printList(){
-        int lp = 0;
         for (String s : names) {
-            lp++;
-//            System.out.print(lp + " ");
             System.out.print(s + ", ");
         }
-        System.out.println("");
+        System.out.println();
     }
     public void printList(ArrayList<String> list){
-        int lp = 0;
         for (String s : list) {
-            lp++;
-//            System.out.print(lp + " ");
             System.out.print(s + ", ");
         }
-        System.out.println("");
+        System.out.println();
     }
     public void printListSize(){
         System.out.println(" rozmiar listy: " + names.size());
