@@ -11,7 +11,7 @@ public class NameSelector {
         while (!programEnd){
             System.out.println("Witam w programie losujacym imię. \n" +
                     "Jesli zastanawiasz się nad kilkoma imionami dla dziecka ten program pomoże Ci wybrać zdając się na ślepy los.\n" +
-                    "Dziekujemy za skorzystanie i gratualcje :) \n");
+                    "Dziekujemy za skorzystanie z programu i serdecznie gratulujemy :) \n");
             programMenu();
         }
 
@@ -56,12 +56,12 @@ public class NameSelector {
         }
     }
     public void isThatAll(){
-        System.out.println("czy to wszystko ? 1- menu, 2-end");
+        System.out.println("czy to wszystko ? 1- menu, 3-end"); // add 2- rerun
         switch (switchChoice()){
             case 1:
                 programMenu();
                 break;
-            case 2:
+            case 3:
                 thankYouEndProgram();
                 break;
             default:
