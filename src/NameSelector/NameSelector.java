@@ -34,6 +34,7 @@ public class NameSelector {
                 break;
             case 2:
                 chooseMultiple();
+                break;
             case 3:
                 predefinedOne();
                 break;
